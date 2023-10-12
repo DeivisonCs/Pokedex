@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&family=Rubik+Mono+One&display=swap');
+
+*{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f6f8fc;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;    
+    background-color: #fff;
+    min-width: 200px;
+}
+
+@media screen and (min-width: 816px){
+    .content{
+        height: auto;
+        max-width: 900px;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+
+    .content h1{
+        text-align: center;
+    }
+}
