@@ -15,6 +15,7 @@ body{
     padding: 1rem;    
     background-color: #fff;
     min-width: 200px;
+    box-shadow: 1px 1px 5px #00000044;
 }
 
 @media screen and (min-width: 816px){
