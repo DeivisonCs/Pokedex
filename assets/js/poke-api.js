@@ -4,7 +4,7 @@ const pokeApi = {};
 function convert_2_PokeModel(pokemonDetails){
     const pokemon = new Pokemon()
     pokemon.name = pokemonDetails.name
-    pokemon.id = ("000" + pokemonDetails.order).slice(-3)
+    pokemon.id = ("000" + pokemonDetails.id).slice(-3)
 
     const types = pokemonDetails.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types

@@ -5,6 +5,7 @@ const nextPage = document.getElementById('nextPage');
 const prevPage = document.getElementById('prevPage');
 const limit = 9
 let offset = 0
+const MaxPokemons = 225
 
 function Pokemon_2_Li(Pokemon_card){
     return ` 
@@ -38,18 +39,31 @@ function Load_Pokemons_New_Page(offset, limit) {
 }
 
 loadMore.addEventListener('click', () => {
-    offset += limit
-     Load_pokemons(offset, limit)
+
+    if(get_Max_Pokemons() == true){
+        offset += limit
+        Load_pokemons(offset, limit)
+    }
 })
 
 nextPage.addEventListener('click', () => {
-    offset += limit
-    Load_Pokemons_New_Page(offset, limit)
+
+    if(get_Max_Pokemons() == true){
+        offset += limit
+        Load_Pokemons_New_Page(offset, limit)
+    }
 })
 
 prevPage.addEventListener('click', () => {
-    
-    if(offset != 0 && (offset -= limit) != 0)
+    if((offset != 0) && (offset - limit >= 0)){
         offset -= limit
         Load_Pokemons_New_Page(offset, limit)
+    }
 })
+
+function get_Max_Pokemons() {
+    if(offset + (2*limit) <= MaxPokemons)
+        return true
+    else
+        return false
+}
