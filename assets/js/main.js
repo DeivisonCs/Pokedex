@@ -9,7 +9,7 @@ const MaxPokemons = 225
 
 function Pokemon_2_Li(Pokemon_card){
     return ` 
-    <li class="pokemon ${Pokemon_card.type}">
+    <li id="${'poke_id_' + Pokemon_card.id}" class="pokemon ${Pokemon_card.type}">
         <span class="number">#${Pokemon_card.id}</span>
         <span class="name">${Pokemon_card.name}</span>
 

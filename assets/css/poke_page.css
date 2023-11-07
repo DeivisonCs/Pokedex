@@ -1,0 +1,153 @@
+.pokemon_page {
+    /* background-color: rgba(0, 0, 0, 0.322); */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+} */
+
+.pokemon_page_content {
+    max-width: 500px;
+    height: auto;
+    margin: 30px auto;
+    background-color: #46D1B1;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 1rem;
+    padding: 50px 30px;
+}
+
+@media screen and (max-width: 450px){
+    .pokemon_page_content{
+        margin: 3px 3px;   
+    }
+}
+
+.pokemon_page_content .poke_image {
+    /* background-color: #fff; */
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pokemon_page_content .poke_image img {
+    max-height: 250px;
+}
+
+.pokemon_page_header .interaction_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.interaction_header .material-symbols-outlined {
+    color: #fff;
+    cursor: pointer;
+}
+
+.pokemon_page_header .interaction_header .number {
+    font-size: 1.3em;
+}
+
+.pokemon_page_header .name {
+    font-size: 2rem;
+}
+
+.pokemon_page_id .poke_types{
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+    gap: 7px;
+}
+
+.pokemon_page_id .poke_types li{
+    width: fit-content;
+    text-align: center;
+    font-size: .625rem;
+    list-style: none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.274);
+    padding: .4rem .8rem;
+    margin: .25rem 0;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.356);
+}
+
+.poke_details {
+    margin: -50px 0px -50px -30px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    width: calc( 100% + 60px);
+    height: auto;
+    padding: 40px 30px;
+}
+
+.poke_details h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline rgb(104, 103, 103);
+    text-underline-offset: 5px;
+}
+
+.poke_details .poke_status_list {
+    list-style: none;
+}
+
+.poke_status_list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-size: .9em;
+    margin-bottom: 8px;
+}
+
+.poke_status_list .barra_externa {
+    background-color: rgba(145, 145, 145, 0.425);
+    width: calc(100% - 50px);
+    height: 10px;
+    border-radius: 1rem;
+}
+
+.poke_status_list .barra_interna {
+    background-color: #46D1B1;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 2px;
+    filter: brightness(1.1);
+}
+
+.poke_status_list .barra_interna .efeito_interno {
+    background-color: #fff;
+    width: 90%;
+    height: 1px;
+    border-radius: 1rem;
+    box-shadow: 1px 2px 3px #fff;
+}
+
+.poke_status_list #hp_stats{
+    width: 10%;
+}
+.poke_status_list #atk_stats{
+    width: 40%;
+}
+.poke_status_list #def_stats{
+    width: 30%;
+}
+.poke_status_list #satk_stats{
+    width: 25%;
+}
+.poke_status_list #sdef_stats{
+    width: 70%;
+}
+.poke_status_list #spd_stats{
+    width: 5%;
+}
