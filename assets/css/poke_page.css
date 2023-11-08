@@ -19,7 +19,7 @@
     max-width: 500px;
     height: auto;
     margin: 30px auto;
-    background-color: #46D1B1;
+    /* background-color: #46D1B1; */
     box-shadow: 0px 0px 10px #000;
     border-radius: 1rem;
     padding: 50px 30px;
@@ -133,7 +133,7 @@
     box-shadow: 1px 2px 3px #fff;
 }
 
-.poke_status_list #hp_stats{
+/* .poke_status_list #hp_stats{
     width: 10%;
 }
 .poke_status_list #atk_stats{
@@ -150,4 +150,4 @@
 }
 .poke_status_list #spd_stats{
     width: 5%;
-}
+} */
