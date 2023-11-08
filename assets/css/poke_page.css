@@ -1,5 +1,6 @@
 .pokemon_page {
     /* background-color: rgba(0, 0, 0, 0.322); */
+    padding: auto;
     position: absolute;
     top: 0;
     bottom: 0;

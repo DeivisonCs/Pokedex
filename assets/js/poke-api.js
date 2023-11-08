@@ -14,7 +14,7 @@ function convert_2_PokeModel(pokemonDetails){
     pokemon.types = types
     pokemon.type = type
 
-    pokemon.img = pokemonDetails.sprites.other.dream_world.front_default
+    pokemon.img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`
 
     pokemon.hp = get_base_stats(pokemonDetails.stats[0].base_stat);
     // console.log(pokemon.hp);
