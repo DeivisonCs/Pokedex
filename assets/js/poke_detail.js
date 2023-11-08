@@ -68,7 +68,7 @@ function show_page(Pokemon_card){
                 <li id="teste1">
                     <span>HP</span>
                     <div class="barra_externa">
-                        <div id="hp_stats" class="barra_interna" style="width: ${Pokemon_card.hp}%;">
+                        <div id="hp_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.hp}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span>ATK</span>
                     <div class="barra_externa">
-                        <div id="atk_stats" class="barra_interna" style="width: ${Pokemon_card.atk}%;">
+                        <div id="atk_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.atk}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span>DEF</span>
                     <div class="barra_externa">
-                        <div id="def_stats" class="barra_interna" style="width: ${Pokemon_card.def}%;">
+                        <div id="def_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.def}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span>SATK</span>
                     <div class="barra_externa">
-                        <div id="satk_stats" class="barra_interna" style="width: ${Pokemon_card.satk}%;">
+                        <div id="satk_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.satk}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span>SDEF</span>
                     <div class="barra_externa">
-                        <div id="sdef_stats" class="barra_interna" style="width: ${Pokemon_card.sdef}%;">
+                        <div id="sdef_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.sdef}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span>SPD</span>
                     <div class="barra_externa">
-                        <div id="spd_stats" class="barra_interna" style="width: ${Pokemon_card.spd}%;">
+                        <div id="spd_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.spd}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>

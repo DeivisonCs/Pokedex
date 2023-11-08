@@ -17,7 +17,9 @@ function Pokemon_2_Li(Pokemon_card){
             <ol class="types">
                 ${Pokemon_card.types.map((type) => `<li>${type}</li>`).join('')}
             </ol>
-            <img src="${Pokemon_card.img}" alt="${Pokemon_card.name}">
+            <div class="img_pokemon">
+                <img src="${Pokemon_card.img}" alt="${Pokemon_card.name}">
+            </div>
         </div>
     </li>
     `
