@@ -41,7 +41,7 @@ function load_Poke_Page(id){
 
 function show_page(Pokemon_card){
     return ` 
-    <div id="card_details" class="pokemon_page_content ${Pokemon_card.type}" style="box-shadow: 0px 0px 10px var(--${Pokemon_card.type}-color);">
+    <div id="card_details" class="pokemon_page_content ${Pokemon_card.type}" style="box-shadow: 0px 0px 5px var(--${Pokemon_card.type}-color);">
         <header class="pokemon_page_header">
             <nav class="interaction_header">
                 <span id="back" class="material-symbols-outlined">arrow_back</span>
@@ -58,7 +58,7 @@ function show_page(Pokemon_card){
         </header>
     
         <div class="poke_image">
-            <img src="${Pokemon_card.img}" alt="Imagem ${Pokemon_card.name}">
+            <img src="${Pokemon_card.img3D}" alt="Imagem ${Pokemon_card.name}">
         </div>
 
         <div class="poke_details">

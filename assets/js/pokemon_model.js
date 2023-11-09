@@ -6,6 +6,7 @@ class Pokemon{
     type;
     types=[];
     img;
+    img3D;
 
     //Stats
     hp;
