@@ -3,15 +3,14 @@ const Poke_Details = {};
 const selected_pokemon = document.getElementById('pokemons_card');
 const details_page = document.getElementById('show_pokemon_page');
 
-document.getElementById('show_pokemon_page').addEventListener("click", function(e) {
-    if(e.target.tagName === "back"){
-        console.log("O elemento com o id " + e.target.tagName + " foi clicado.");
+details_page.addEventListener("click", function(e) {
+
+    if(e.target.closest("#back")){
+        details_page.style.display = "none";
+        details_page.innerHTML = "";
+        // console.log("O elemento com o id " + e.target.id + " foi clicado.");
     }
 })
-
-// return_button.addEventListener("click", () => {
-//     details_page.style.display = "none";
-// })
 
 selected_pokemon.addEventListener('click', function(e) {
 
@@ -42,7 +41,7 @@ function load_Poke_Page(id){
 
 function show_page(Pokemon_card){
     return ` 
-    <div id="card_details" class="pokemon_page_content ${Pokemon_card.type}">
+    <div id="card_details" class="pokemon_page_content ${Pokemon_card.type}" style="box-shadow: 0px 0px 10px var(--${Pokemon_card.type}-color);">
         <header class="pokemon_page_header">
             <nav class="interaction_header">
                 <span id="back" class="material-symbols-outlined">arrow_back</span>
