@@ -18,13 +18,14 @@ function convert_2_PokeModel(pokemonDetails){
     pokemon.img3D = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`
 
     pokemon.hp = get_base_stats(pokemonDetails.stats[0].base_stat);
-    // console.log(pokemon.hp);
     pokemon.atk = get_base_stats(pokemonDetails.stats[1].base_stat);
     pokemon.def = get_base_stats(pokemonDetails.stats[2].base_stat);
     pokemon.satk = get_base_stats(pokemonDetails.stats[3].base_stat);
     pokemon.sdef = get_base_stats(pokemonDetails.stats[4].base_stat);
     pokemon.spd = get_base_stats(pokemonDetails.stats[5].base_stat);
 
+    pokemon.weight = (pokemonDetails.weight) / 10; //kilos
+    pokemon.height = (pokemonDetails.height) / 10; //decimetro
     return pokemon;
 }
 

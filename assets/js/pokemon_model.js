@@ -15,4 +15,8 @@ class Pokemon{
     satk;
     sdef;
     spd;
+
+    //About
+    height;
+    weight;
 }

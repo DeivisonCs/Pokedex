@@ -41,6 +41,7 @@ function load_Poke_Page(id){
 
 function show_page(Pokemon_card){
     return ` 
+    <div class="poke_page_content">
     <div id="card_details" class="pokemon_page_content ${Pokemon_card.type}" style="box-shadow: 0px 0px 5px var(--${Pokemon_card.type}-color);">
         <header class="pokemon_page_header">
             <nav class="interaction_header">
@@ -62,58 +63,79 @@ function show_page(Pokemon_card){
         </div>
 
         <div class="poke_details">
-            <h1>Base Status</h1>
+            <h2>Base Status</h2>
             <ul class="poke_status_list">
-                <li id="teste1">
+                <li>
                     <span>HP</span>
                     <div class="barra_externa">
-                        <div id="hp_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.hp}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.hp}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="hp_stats">${Pokemon_card.hp}/100</span>
                 </li>
                 <li>
                     <span>ATK</span>
                     <div class="barra_externa">
-                        <div id="atk_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.atk}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.atk}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="atk_stats">${Pokemon_card.atk}/100</span>
                 </li>
                 <li>
                     <span>DEF</span>
                     <div class="barra_externa">
-                        <div id="def_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.def}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.def}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="def_stats">${Pokemon_card.def}/100</span>
                 </li>
                 <li>
                     <span>SATK</span>
                     <div class="barra_externa">
-                        <div id="satk_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.satk}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.satk}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="satk_stats">${Pokemon_card.satk}/100</span>
                 </li>
                 <li>
                     <span>SDEF</span>
                     <div class="barra_externa">
-                        <div id="sdef_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.sdef}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.sdef}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="sdef_stats">${Pokemon_card.def}/100</span>
                 </li>
                 <li>
                     <span>SPD</span>
                     <div class="barra_externa">
-                        <div id="spd_stats" class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.spd}%;">
+                        <div class="barra_interna ${Pokemon_card.type}" style="width: ${Pokemon_card.spd}%;">
                             <div class="efeito_interno"></div>
                         </div>
                     </div>
+                    <span class="spd_stats">${Pokemon_card.spd}/100</span>
+                </li>
+            </ul>
+
+            <h2 class="about_details">About</h2>
+            <ul class="caracteristic_list">
+                <li>
+                    <span class="caracteristic_name">Altura:</span>
+                    <span class="caracteristc_number">${Pokemon_card.height}m</span>
+                    <aside>( ${(Pokemon_card.height /10).toFixed(2)}cm )</aside>
+                </li>
+                <li>
+                    <span class="caracteristic_name">Peso:</span>
+                    <span class="caracteristc_number">${Pokemon_card.weight}Kg</span>
+                    <aside>( ${(Pokemon_card.weight /10).toFixed(2)}g )</aside>
                 </li>
             </ul>
         </div>
+    </div>
     </div>
     `
 }
