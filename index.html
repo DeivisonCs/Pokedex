@@ -26,8 +26,30 @@
 </head>
 <body>
     <section class="content">
-        <h1>Pokedex</h1>
+        <h1 class="main_title">Pokedex</h1>
+
+        <section class="pokedex_section">
+
+            <header class="pokedex_header">
+                <img class="pokemon_icon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Icon">
+
+                <img class="pokemon_gif" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Image">
+
+                <button class="see_more_pokedex_button" type="button">Details</button>
+                
+                <form class="search_pokemon">
+                    <input class="pokedex_input" 
+                    type="search"
+                    placeholder="Name or Id">
+
+                    <button class="pokedex_search_button" type="submit">Search</button>
+                </form>
+
+                <img class="pokedex_header_img" src="assets/img/pokedex.png" alt="Pokedex Image">
+            </header>
+        </section>
         
+        <h2 class="main_title">All Pokemons</h2>
         
         <ol id="pokemons_card" class="list_pokemons">
             <!-- Implementado pelo JavaScript -->
