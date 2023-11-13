@@ -131,7 +131,7 @@ function show_page(Pokemon_card){
                 <li>
                     <span class="caracteristic_name">Peso:</span>
                     <span class="caracteristc_number">${Pokemon_card.weight}Kg</span>
-                    <aside>( ${(Pokemon_card.weight /10).toFixed(2)}g )</aside>
+                    <aside>( ${(Pokemon_card.weight *1000).toFixed(2)}g )</aside>
                 </li>
             </ul>
         </div>
