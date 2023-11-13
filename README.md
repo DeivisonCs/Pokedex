@@ -1,8 +1,10 @@
 # Projeto Pokedex
 
-Atividade feita durante um BootCamp de front-end da DIO.
+Atividade feita durante um BootCamp de front-end da DIO e aprimorada por mim para treinar linguagens de front-end.
 
 Projeto Original: https://dribbble.com/shots/6540871-Pokedex-App
+ 
+Meu Projeto: https://deivisoncs.github.io/Pokedex/
 
 ## Tecnologias Utilizadas
 
