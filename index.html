@@ -31,16 +31,19 @@
         <section class="pokedex_section">
 
             <header class="pokedex_header">
-                <img class="pokemon_icon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Icon">
-
-                <img class="pokemon_gif" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Image">
+                <img class="pokemon_icon add_gif" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Icon">
+                
+                <img class="pokemon_gif add_gif" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif" alt="Pokemon Image">
 
                 <button class="see_more_pokedex_button" type="button">Details</button>
                 
-                <form class="search_pokemon">
-                    <input class="pokedex_input" 
+                <form id="forms_pokedex" class="search_pokemon">
+
+                    <input id="pokemon_identify" class="pokedex_input" 
+                    name="value_input"
                     type="search"
-                    placeholder="Name or Id">
+                    placeholder="Name or Id"
+                    autocomplete="off">
 
                     <button class="pokedex_search_button" type="submit">Search</button>
                 </form>
