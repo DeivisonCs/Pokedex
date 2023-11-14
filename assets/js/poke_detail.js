@@ -2,6 +2,7 @@ const Poke_Details = {};
 
 const selected_pokemon = document.getElementById('pokemons_card');
 const details_page = document.getElementById('show_pokemon_page');
+const details_pokedex_button = document.getElementsByClassName('see_more_pokedex_button');
 
 details_page.addEventListener("click", function(e) {
 
@@ -12,12 +13,16 @@ details_page.addEventListener("click", function(e) {
     }
 })
 
+details_pokedex_button[0].addEventListener('click', function(e) {
+
+    const details_id = details_pokedex_button[0].id;
+    load_Poke_Page(details_id);
+})
+
 selected_pokemon.addEventListener('click', function(e) {
 
     if(e.target.closest(".pokemon").id)
     {
-        details_page.style.display = "";
-
         const id = e.target.closest(".pokemon").id;
         load_Poke_Page(id);
     }
@@ -32,6 +37,8 @@ Poke_Details.get_Details = (id) => {
 }
 
 function load_Poke_Page(id){
+    details_page.style.display = "block";
+
     Poke_Details.get_Details(id).then((pokemon) => {
         pokemon = show_page(pokemon);
         details_page.innerHTML = pokemon;

@@ -48,7 +48,7 @@
 
 .pokedex_header .pokemon_icon {
     position: absolute;
-    top: 6%;
+    top: 5%;
     left: 15%;
     transform: translate(-3%, 0%);
     height: 6%;

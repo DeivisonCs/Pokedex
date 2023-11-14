@@ -13,12 +13,16 @@ pokedex_search.addEventListener('submit', (e) => {
     
     const id = document.getElementById("pokemon_identify");
     const pokemon_gif = document.getElementsByClassName("add_gif");
+    const details_button = document.getElementsByClassName('see_more_pokedex_button');
     
     get_Pokemon_Gif(id.value).then((response) => {
         if(response)
         {
             pokemon_gif[0].src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${response.id}.gif`;
             pokemon_gif[1].src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${response.id}.gif`;
+
+            details_button[0].id = response.id;
+            details_button[0].style.display = 'block';
         }
     })
 })
