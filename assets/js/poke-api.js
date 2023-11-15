@@ -2,11 +2,20 @@
 const pokeApi = {};
 
 function convert_2_PokeModel(pokemonDetails){
-    const pokemon = new Pokemon()
+    const pokemon = new Pokemon_Mod()
     pokemon.name = pokemonDetails.name
     // console.log(pokemon.name);
     pokemon.id = pokemonDetails.id
     pokemon.number = ("000" + pokemonDetails.id).slice(-3)
+
+    if(pokemonDetails.forms[1] != -1){
+        pokemon.gender_f = (pokemonDetails.forms[1]*100) /8; 
+        pokemon.gender_m = 100 - pokemon.gender_f; 
+    }
+    else{
+        pokemon.gender_f = undefined; 
+        pokemon.gender_m = undefined; 
+    }
 
     const types = pokemonDetails.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types

@@ -30,13 +30,17 @@ selected_pokemon.addEventListener('click', function(e) {
 
 Poke_Details.get_Details = (id) => {
     const poke_url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-
+    
     return fetch(poke_url)
             .then((response) => response.json())
+            .then( async (body) => {
+                body.forms = body.forms.concat(await show_gender(body.id))
+                return body
+            })
             .then(convert_2_PokeModel)
 }
 
-function load_Poke_Page(id){
+async function load_Poke_Page(id){
     details_page.style.display = "block";
 
     Poke_Details.get_Details(id).then((pokemon) => {
@@ -45,6 +49,50 @@ function load_Poke_Page(id){
     })
 }
 
+const fetch_gender = async (id, page) => {
+    const url_w_id = `https://pokeapi.co/api/v2/pokemon-species/${id}/`;
+    const ApiResp = await fetch( `https://pokeapi.co/api/v2/gender/${page}/`);
+
+    const ApiJson = await ApiResp.json();
+    
+    let i = 0;
+    while(ApiJson.pokemon_species_details[i] != null)
+    {
+        if(ApiJson.pokemon_species_details[i].pokemon_species.url == url_w_id){
+            return ApiJson.pokemon_species_details[i].rate
+        }
+        i++
+    }
+} 
+
+const show_gender = async (id) => {
+    let page = 1;
+    let gender = undefined;
+
+    while(gender == undefined){
+        gender = await fetch_gender(id, page);
+        page++;
+    }
+    
+    return gender
+    console.log(gender);
+}
+// show_gender(384)
+
+const show_gender_html = (gender) => {
+    console.log(gender)
+    console.log(details_page)
+    if(gender == undefined){
+        const genders = details_page.closest(".gender_list").className[0];
+        console.log(genders)
+        genders.style.display = 'none';
+    }
+    else{
+        const genders = details_page.closest(".undefined_output").className[0];
+        console.log(genders)
+        genders.style.display = 'none';
+    }
+}
 
 function show_page(Pokemon_card){
     return ` 
@@ -132,13 +180,22 @@ function show_page(Pokemon_card){
             <ul class="caracteristic_list">
                 <li>
                     <span class="caracteristic_name">Altura:</span>
-                    <span class="caracteristc_number">${Pokemon_card.height}m</span>
-                    <aside>( ${(Pokemon_card.height /10).toFixed(2)}cm )</aside>
+                    <span class="caracteristc_number">${Pokemon_card.height}m <aside>( ${(Pokemon_card.height /10).toFixed(2)}cm )</aside></span>
+                    
                 </li>
                 <li>
                     <span class="caracteristic_name">Peso:</span>
-                    <span class="caracteristc_number">${Pokemon_card.weight}Kg</span>
-                    <aside>( ${(Pokemon_card.weight *1000).toFixed(2)}g )</aside>
+                    <span class="caracteristc_number">${Pokemon_card.weight}Kg <aside>( ${(Pokemon_card.weight *1000).toFixed(2)}g )</aside></span>
+                    
+                </li>
+                <li class="li_genders">
+                    <span class="caracteristic_name">Gender:</span>
+                    <div class="gender_list ${Pokemon_card.gender_m}">
+                        <span class="material-symbols-outlined gender_m">male</span>
+                        <span class="caracteristc_number">${Pokemon_card.gender_m}%</span>
+                        <span class="material-symbols-outlined gender_f">female</span>
+                        <span class="caracteristc_number">${Pokemon_card.gender_f}%</span>
+                    <div>
                 </li>
             </ul>
         </div>

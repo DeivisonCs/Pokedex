@@ -1,5 +1,5 @@
 
-class Pokemon{
+class Pokemon_Mod{
     name;
     id;
     Number;
@@ -7,6 +7,8 @@ class Pokemon{
     types=[];
     img;
     img3D;
+    gender_f;
+    gender_m;
 
     //Stats
     hp;

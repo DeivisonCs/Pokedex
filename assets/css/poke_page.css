@@ -152,21 +152,51 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 15px;
 }
+.poke_details .caracteristic_list li{
+    display: grid;
+    grid-template-columns: 20% 40%;
+}
+.poke_details .caracteristic_list .li_genders{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-weight: light;
+}
+.poke_details .caracteristic_list .gender_list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.poke_details .caracteristic_list .gender_f {
+    color: #e05169;
+}
+.poke_details .caracteristic_list .gender_m {
+    color: #0000ff;
+}
+
 .poke_details .caracteristic_list .caracteristic_name {
-    font-weight: bold;
-    margin-right: 10px;
+    font-weight: light;
+    margin-right: 25px;
 }
 
 .poke_details .caracteristic_list .caracteristc_number {
     font-size: 16px;
     margin-right: 5px;
+    color: #4d4d4d;
 }
 
 .poke_details .caracteristic_list li aside {
     display: inline;
     font-size: 14px;
+    color: #4d4d4d;
+}
+
+.poke_details .caracteristic_list .undefined {
+    display: none;
 }
 
 @media screen and (max-width: 495px){
