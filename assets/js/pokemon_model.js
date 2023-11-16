@@ -22,4 +22,5 @@ class Pokemon_Mod{
     height;
     weight;
     abilities;
+    habitat
 }

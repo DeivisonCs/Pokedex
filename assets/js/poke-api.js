@@ -7,6 +7,7 @@ function convert_2_PokeModel(pokemonDetails){
     // console.log(pokemon.name);
     pokemon.id = pokemonDetails.id
     pokemon.number = ("000" + pokemonDetails.id).slice(-3)
+    pokemon.habitat = pokemonDetails.forms[2]
 
     if(pokemonDetails.forms[1] != -1){
         pokemon.gender_f = (pokemonDetails.forms[1]*100) /8; 

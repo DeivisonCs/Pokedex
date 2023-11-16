@@ -34,7 +34,9 @@ Poke_Details.get_Details = (id) => {
     return fetch(poke_url)
             .then((response) => response.json())
             .then( async (body) => {
-                body.forms = body.forms.concat(await show_gender(body.id))
+                body.forms = body.forms.concat(await get_gender(body.id));
+                body.forms = body.forms.concat(await get_habitat(body.id));
+                
                 return body
             })
             .then(convert_2_PokeModel)
@@ -65,7 +67,7 @@ const fetch_gender = async (id, page) => {
     }
 } 
 
-const show_gender = async (id) => {
+const get_gender = async (id) => {
     let page = 1;
     let gender = undefined;
 
@@ -73,26 +75,24 @@ const show_gender = async (id) => {
         gender = await fetch_gender(id, page);
         page++;
     }
-    
     return gender
-    console.log(gender);
 }
-// show_gender(384)
+// get_gender(384)
 
-const show_gender_html = (gender) => {
-    console.log(gender)
-    console.log(details_page)
-    if(gender == undefined){
-        const genders = details_page.closest(".gender_list").className[0];
-        console.log(genders)
-        genders.style.display = 'none';
-    }
-    else{
-        const genders = details_page.closest(".undefined_output").className[0];
-        console.log(genders)
-        genders.style.display = 'none';
-    }
+const get_habitat = async (id) => {
+
+    const fetch_hab = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+
+    let habitat = await fetch_hab.json();
+
+    if(habitat.habitat == null)
+        habitat = undefined;
+    else
+        habitat = habitat.habitat.name;
+
+    return habitat;
 }
+get_habitat(3)
 
 function show_page(Pokemon_card){
     return ` 
@@ -188,6 +188,10 @@ function show_page(Pokemon_card){
                     <span class="caracteristc_number">${Pokemon_card.weight}Kg <aside>( ${(Pokemon_card.weight *1000).toFixed(2)}g )</aside></span>
                     
                 </li>
+                <li>
+                    <span class="caracteristic_name">Habitat:</span>
+                    <span class="caracteristic_number habitat_name">${Pokemon_card.habitat}</span>
+                </li>
                 <li class="li_genders">
                     <span class="caracteristic_name">Gender:</span>
                     <div class="gender_list ${Pokemon_card.gender_m}">
@@ -208,3 +212,9 @@ function show_page(Pokemon_card){
     </div>
     `
 }
+
+// function testes (id) {
+//     fetch(`https://pokeapi.co/api/v2/ability/${id}/`)
+//         .then(response => console.log(response.json()))
+// }
+// testes(7)

@@ -24,6 +24,8 @@
     margin: 30px auto;
     border-radius: 20px;
     padding: 50px 30px;
+    background-image: url(../img/background_patter.png);
+    background-blend-mode: soft-light;
 }
 
 .pokemon_page_content::-webkit-scrollbar {
@@ -48,6 +50,7 @@
 .pokemon_page_content .poke_image img {
     max-width: 100%;
     max-height: 350px;
+    filter: drop-shadow(0px 2px 1px #3333339c);
 }
 
 .pokemon_page_header .interaction_header {
@@ -62,7 +65,9 @@
 }
 
 .pokemon_page_header .interaction_header .number {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    opacity: .6;
+    color: #fff;
 }
 
 .pokemon_page_header .name {
@@ -79,7 +84,7 @@
 .pokemon_page_id .poke_types li{
     width: fit-content;
     text-align: center;
-    font-size: .625rem;
+    font-size: .7rem;
     list-style: none;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.274);
@@ -157,8 +162,25 @@
 }
 .poke_details .caracteristic_list li{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 20% 100%;
 }
+
+@media screen and (max-width: 500px){
+    .poke_details .caracteristic_list li {
+        grid-template-columns: 26% 100%;
+    }
+}
+@media screen and (max-width: 400px){
+    .poke_details .caracteristic_list li {
+        grid-template-columns: 30% 100%;
+    }
+}
+@media screen and (max-width: 360px){
+    .poke_details .caracteristic_list li {
+        grid-template-columns: 40% 100%;
+    }
+}
+
 .poke_details .caracteristic_list .li_genders{
     display: flex;
     flex-direction: row;
@@ -188,6 +210,12 @@
     font-size: 16px;
     margin-right: 5px;
     color: #4d4d4d;
+}
+
+.poke_details .caracteristic_list .habitat_name {
+    font-family: 'Oxanium';
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .poke_details .caracteristic_list li aside {
