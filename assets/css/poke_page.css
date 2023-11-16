@@ -99,9 +99,10 @@
 }
 
 .poke_details h2 {
+    font-family: 'Oxanium', Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-decoration: underline rgb(104, 103, 103);
     text-underline-offset: 5px;
 }
@@ -145,7 +146,7 @@
 }
 
 .poke_details .about_details{
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .poke_details .caracteristic_list {
@@ -156,7 +157,7 @@
 }
 .poke_details .caracteristic_list li{
     display: grid;
-    grid-template-columns: 20% 40%;
+    grid-template-columns: 20% 80%;
 }
 .poke_details .caracteristic_list .li_genders{
     display: flex;
@@ -199,6 +200,32 @@
     display: none;
 }
 
+.poke_details .abilities_details {
+    margin-top: 40px;
+}
+
+.poke_details .abilities_list {
+    list-style:  none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.poke_details .abilities_list li {
+    font-family: 'Oxanium', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(68, 68, 68);
+    font-size: 1rem;
+    list-style: none;
+    padding: 8px 10px;
+    margin: .25rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    border-radius: 1rem;
+    box-shadow: -1px 1.5px #0000005b;
+}
+
 @media screen and (max-width: 495px){
     
     .pokemon_page_content {
@@ -211,5 +238,14 @@
     .poke_details {
         border-radius: 20px 20px 0px 0px;
         height: 100%;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .poke_details .abilities_list {
+        list-style:  none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
     }
 }

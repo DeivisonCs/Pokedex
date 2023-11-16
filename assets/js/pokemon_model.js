@@ -21,4 +21,5 @@ class Pokemon_Mod{
     //About
     height;
     weight;
+    abilities;
 }

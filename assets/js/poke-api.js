@@ -20,6 +20,7 @@ function convert_2_PokeModel(pokemonDetails){
     const types = pokemonDetails.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
 
+    pokemon.abilities = pokemonDetails.abilities.map((skillSlot) => skillSlot.ability.name)
     pokemon.types = types
     pokemon.type = type
 

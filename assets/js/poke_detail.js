@@ -198,6 +198,11 @@ function show_page(Pokemon_card){
                     <div>
                 </li>
             </ul>
+
+            <h2 class="abilities_details">Abilities</h2>
+            <ul class="abilities_list">
+                ${Pokemon_card.abilities.map((abilitie) => `<li style="background-color: color-mix(in srgb, var(--${Pokemon_card.type}-color) 65%, white);">${abilitie}</li>`).join('')}
+            </ul>
         </div>
     </div>
     </div>
