@@ -71,6 +71,9 @@
 }
 
 .pokemon_page_header .name {
+    font-family: 'Oxanium';
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #333;
     font-size: 2rem;
 }
 
